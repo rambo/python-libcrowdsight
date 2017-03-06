@@ -26,7 +26,7 @@ class CrowdSight {
 %End
 
 public:
-    CrowdSight( std::string datadir, OperationMode mode=DEVELOPER);
+    CrowdSight( std::string datadir="/usr/local/crowdsight/data", OperationMode mode=DEVELOPER);
 
 private:
     /* CrowdSight objects cannot be copied */

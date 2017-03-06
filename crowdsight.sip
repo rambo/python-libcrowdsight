@@ -1,4 +1,4 @@
-// Define the SIP wrapper to the hellosip library.
+// Define SIP wrapper for crowdsight library
 
 %Module crowdsight
 

@@ -2,6 +2,15 @@
 
 %Module crowdsight
 
+
+typedef std::vector<int> vector_int;
+typedef std::vector<float> vector_float;
+typedef std::vector<cv::Mat> vector_cvMat;
+typedef std::vector<cv::UMat> vector_cvUMat;
+typedef std::vector<cv::Point> vector_cvpoint;
+typedef std::vector<Person> vector_Person;
+typedef std::vector< std::vector<int> > vector_vector_int;
+
 enum OperationMode {
    DEVELOPER      = 0,
    REDISTRIBUTION = 1,
@@ -30,24 +39,24 @@ public:
     int getID();
     int getAge();
     float getGender();
-    std::vector<float> & getEthnicity( );
+    vector_float & getEthnicity( );
     cv::Rect getFaceRect();
     float getMood();
     float getHeadYaw();
     float getHeadPitch();
     float getHeadRoll();
     cv::Point getHeadGaze();
-    std::vector<float> & getHeadPose();
+    vector_float & getHeadPose();
     cv::Point getRightEye();
     cv::Point getLeftEye();
     int64_t getTime();
     int64_t firstSeen();
     int64_t getAttentionSpan();
     bool isReturningCustomer();
-    std::vector< std::vector<int> > & getClothingColors(  );
-    std::vector<float> & getEmotions( );
-    std::vector<float> & getActionUnits( );
-    std::vector<cv::Point> & getTrackingPoints();
+    vector_vector_int & getClothingColors(  );
+    vector_float & getEmotions( );
+    vector_float & getActionUnits( );
+    vector_cvPoint & getTrackingPoints();
 
 };
 
@@ -70,7 +79,7 @@ public:
     int getRemainingCredits();
     bool process( const cv::Mat & image, const cv::vector<cv::Rect> & faces, bool singleImage = false );
     bool process( const cv::Mat & image, bool singleImage = false );
-    bool getCurrentPeople( std::vector<Person> & people, const FeaturesRequest & features = ALL_FEATURES );
+    bool getCurrentPeople( vector_Person & people, const FeaturesRequest & features = ALL_FEATURES );
     void reset();
     int getPeopleCount();
     int getMaxNumPeople();
@@ -82,9 +91,9 @@ public:
     bool addToModel( int modelId, int observationId);
     bool addToModel( int id, const cv::Mat & img , const cv::Rect & rect = cv::Rect(0, 0, 0, 0));
     double compareModels( int id1, int id2 );
-    bool identifyModel( int id, std::vector<int> & modelIds,std::vector<int> & foundIds, std::vector<float> & confidence, int topK = 1 );
-    std::vector<int> getModels();
-    std::vector<int> getModelsExcept(int excludedID);
+    bool identifyModel( int id, vector_int & modelIds,vector_int & foundIds, vector_float & confidence, int topK = 1 );
+    vector_int getModels();
+    vector_int getModelsExcept(int excludedID);
     bool getLabel(int id, std::string & label);
     int getMinFaceSize();
     int getMaxFaceSize();

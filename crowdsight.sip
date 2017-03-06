@@ -2,10 +2,16 @@
 
 %Module crowdsight
 
+enum OperationMode {
+   DEVELOPER      = 0,
+   REDISTRIBUTION = 1,
+};
+
 class Person {
 
 %TypeHeaderCode
 #include <crowdsight.h>
+#include "opencv2/core/types_c.h"
 %End
 
 public:
@@ -16,10 +22,11 @@ class CrowdSight {
 
 %TypeHeaderCode
 #include <crowdsight.h>
+#include "opencv2/core/types_c.h"
 %End
 
 public:
-    CrowdSight( std::string datadir, int mode);
+    CrowdSight( std::string datadir, OperationMode mode=DEVELOPER);
 };
 
 

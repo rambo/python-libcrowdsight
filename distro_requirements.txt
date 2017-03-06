@@ -1,0 +1,4 @@
+sip-dev
+python-sip
+python-opencv
+

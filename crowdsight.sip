@@ -27,6 +27,11 @@ class CrowdSight {
 
 public:
     CrowdSight( std::string datadir, OperationMode mode=DEVELOPER);
+
+private:
+    /* CrowdSight objects cannot be copied */
+    CrowdSight( const CrowdSight & );
+    CrowdSight & operator=( const CrowdSight & );
 };
 
 

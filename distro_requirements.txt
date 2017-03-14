@@ -1,4 +1,10 @@
-sip-dev
-python-sip
-python-opencv
-
+gccxml
+cython
+python-numpy
+python-pycparser
+python-nose
+cmake
+python-lxml
+llvm-dev
+libedit-dev
+libclang-3.5-dev

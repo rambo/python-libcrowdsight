@@ -1,16 +1,14 @@
 # CrowdSight bindings for Python
 
-<http://sightcorp.com/crowdsight/> An attempt at it anyway, these are very far from usable at the moment.
+An attempt at it anyway, these are very far from usable at the moment.
 
-Using SIP (not the VOIP protocol): <https://www.riverbankcomputing.com/software/sip/intro> because it seemed like the sanest way to handle the C++ -> Python mapping.
+Using <https://github.com/xdress/xdress>.
 
-OpenCV unfortunately uses completely home-grown bindings-generation
-so their code doesn't help me here.
+## Install XDress
 
-## Building
+To install the dependencies on Ubuntu 14.04 use the following command:
 
-  - Install the packages in `distro_requirements.txt`
-  - run `configure.py`
-  - run `make` in the `build` -directory.
+  apt-get install -y gccxml cython python-numpy python-pycparser python-nose cmake python-lxml llvm-dev libedit-dev libclang-3.5-dev
+  apt-get remove -y llvm-3.4
 
-That's the theory anyway.
+  pip install xdress
